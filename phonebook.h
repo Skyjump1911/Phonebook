@@ -7,24 +7,40 @@
  * 
  */
 
-
+#ifndef PHONEBOOK_H
+#define PHONEBOOK_H
 
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <string>
 
-class entry {
 
- private:
-  string first_name;
-  string last_name;
-  string phone_number;
+
+struct entry {
+
+  std::string first_name;
+  std::string last_name;
+  std::string phone_number;
+
+  entry *next;
+
+};
+
+class phonebook {
+
+  private:
+
+  entry head;
+ 
+  
+
+  
+  public: 
 
 
   //constructor
- public:
-  entry();
+  phonebook();
 
   //methods
   void push_front(const struct& node);
@@ -44,7 +60,10 @@ class entry {
   void print();
 
   void delete_user(const string& username);
-
+}
   
 
 };
+
+
+#endif
