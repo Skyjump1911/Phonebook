@@ -55,5 +55,12 @@ int main() {
     //    test.push_front("Sarah", "Miller", "323-333-9849");
 
     test.write_to_file("testfile.txt");
-    test.read_from_file("testfile.txt"); 
+    test.read_from_file("testfile.txt");
+    cout << "this is a test of the lookup funciton:" << endl;
+    test.push_back("Angela", "Melton", "731-819-6052");
+    test.lookup("Angela", "Melton");
+    test.push_back("James", "Melton", "731-819-6300");
+    cout << "this is the other number:"; 
+    test.lookup("James","Melton");
+    
   }

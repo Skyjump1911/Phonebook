@@ -99,7 +99,27 @@ void phonebook::read_from_file(const string& filename) {
     push_back(first, last, phonenum);
     file >> first >> last >> phonenum; 
 }
-  cout << "works";   
+    
 }
 
+void phonebook::lookup(const std::string& firstname, const std::string& lastname) {
 
+  entry *car = head;
+
+  while(car->next != NULL) {
+
+    if(car->first_name == firstname && car->last_name == lastname) {
+
+      cout << "That person's phone number is: " << car->phone_number;
+      return;
+    }
+      car = car->next;
+
+    }
+    
+  cout << "There is no phone number associated with that person." << endl;
+    return;
+    
+  }
+
+    

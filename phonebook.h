@@ -43,7 +43,7 @@ class phonebook {
   phonebook();
 
   //destructor
-  ~phonebook();
+  //  ~phonebook();
   
   //methods
   void push_front(std::string first, std::string last, std::string num);
@@ -56,7 +56,7 @@ class phonebook {
   
   void insert_sorted(const entry& node);
 
-  std::string lookup(const std::string& name); 
+  void lookup(const std::string& firstname, const std::string& lastname); 
 
   std::string reverse_lookup(const std::string& phonenumber);
 
