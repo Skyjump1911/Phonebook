@@ -106,14 +106,14 @@ void phonebook::lookup(const std::string& firstname, const std::string& lastname
 
   entry *car = head;
 
-  while(car->next != NULL) {
+  while(car != NULL) {
 
     if(car->first_name == firstname && car->last_name == lastname) {
 
       cout << "That person's phone number is: " << car->phone_number;
       return;
     }
-      car = car->next;
+    car = car->next; 
 
     }
     
@@ -123,3 +123,60 @@ void phonebook::lookup(const std::string& firstname, const std::string& lastname
   }
 
     
+void phonebook::reverse_lookup(const std::string& phonenum) {
+
+  entry *newcar = head;
+
+  while(newcar != NULL) {
+
+    if(newcar->phone_number == phonenum){
+      cout << "That person's name is: ";
+      cout << newcar->first_name;
+      cout << " ";
+      cout << newcar->last_name; 
+      return;
+    }
+
+    newcar = newcar->next; 
+    }
+
+  cout << "Sorry, there is no name associated with that phone number.";
+  return; 
+
+
+}
+
+void phonebook::delete_user(const std::string& first, const std::string& last){
+
+
+  entry *temp = head;
+  entry *prev = nullptr;
+
+
+  if(temp == NULL) {
+    cout << "no users to delete";
+    return; 
+  }
+  if(temp != NULL && (temp->first_name == first && temp->last_name == last)) {
+
+    head = temp->next;
+    delete temp;
+    cout << "at least this part works"; 
+    return;
+  }
+  
+  while(temp != NULL && (temp->first_name != first && temp->last_name != last)){
+    prev = temp;
+    temp = temp->next; 
+
+}
+    
+  prev->next = temp->next;
+  delete temp;
+
+
+  
+}
+
+
+  

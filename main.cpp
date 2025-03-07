@@ -21,10 +21,63 @@ using namespace std;
 void displayMenu();
 
 int main() {
+  
+  phonebook test;
 
-       displayMenu(); 
+
+  test.push_back("James", "Smith", "731-819-5919");
+    test.push_back("John", "Cedar", "748-333-9138");
+    test.push_back("John", "Cedar", "748-333-9138");
+    test.push_back("John", "Cedar", "748-333-9138");
+    test.push_back("John", "Cedar", "748-333-9138");
+    test.push_back("John", "Cedar", "748-333-9138"); 
+    //    test.push_front("Sarah", "Miller", "323-333-9849");
+
+    test.write_to_file("testfile.txt");
+    test.read_from_file("testfile.txt");
+    cout << "this is a test of the lookup funciton:" << endl;
+    test.push_back("Angela", "Melton", "731-819-6052"); 
+    cout << "Smith's Phone number is: "; 
+    test.lookup("James", "Smith");
+    cout << endl;
+    cout << endl;
+    cout << "Mom's number is: "; 
+    test.lookup("Angela", "Melton");
+    cout << endl;
+
+    cout << "Another test" << endl;
+
+
+    test.reverse_lookup("731-819-6052");
+    cout << endl;
+    test.reverse_lookup("188-1864-352");
+    cout << endl;
+    test.reverse_lookup("731-819-5919"); 
+    test.delete_user("James", "Smith");
+    test.reverse_lookup("731-819-5919");
 
   
+  int choice;
+       displayMenu(); 
+
+       cin >> choice;
+
+       switch(choice) {
+
+       case 1:
+	 string filename;
+	 cout << "Enter the name of the file: ";
+	 cin >> filename; 
+	 test.read_from_file(filename);
+	 break; 
+       case 2:
+	 string secondname;
+	 cout << "Enter the name of the file: ";
+	 cin >> secondname;
+	 test.write_to_file(filename); 
+         break; 
+       }
+       
   return 0;
 }
 
@@ -44,23 +97,6 @@ int main() {
     cout << "Please enter your choice now: " << endl;
 
 
-    phonebook test;
 
-    test.push_back("James", "Smith", "731-819-5919");
-    test.push_back("John", "Cedar", "748-333-9138");
-    test.push_back("John", "Cedar", "748-333-9138");
-    test.push_back("John", "Cedar", "748-333-9138");
-    test.push_back("John", "Cedar", "748-333-9138");
-    test.push_back("John", "Cedar", "748-333-9138"); 
-    //    test.push_front("Sarah", "Miller", "323-333-9849");
-
-    test.write_to_file("testfile.txt");
-    test.read_from_file("testfile.txt");
-    cout << "this is a test of the lookup funciton:" << endl;
-    test.push_back("Angela", "Melton", "731-819-6052");
-    test.lookup("Angela", "Melton");
-    test.push_back("James", "Melton", "731-819-6300");
-    cout << "this is the other number:"; 
-    test.lookup("James","Melton");
-    
+   
   }

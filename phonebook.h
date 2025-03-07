@@ -58,11 +58,11 @@ class phonebook {
 
   void lookup(const std::string& firstname, const std::string& lastname); 
 
-  std::string reverse_lookup(const std::string& phonenumber);
+  void reverse_lookup(const std::string& phonenumber);
 
-  void print();
+  void print(const std::string& filename);
 
-  void delete_user(const std::string& username);
+  void delete_user(const std::string& first, const std::string& last);
   
 
 };
