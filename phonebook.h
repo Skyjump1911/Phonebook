@@ -31,7 +31,7 @@ class phonebook {
 
   private:
 
-  entry head;
+  entry  *head;
  
   
 
@@ -42,25 +42,27 @@ class phonebook {
   //constructor
   phonebook();
 
-  //methods
-  void push_front(const struct& node);
-
-  void push_back(const struct& node);
-
-  void read_from_file(const string& filename);
-
-  void write_to_file(const string& filename);
+  //destructor
+  ~phonebook();
   
-  void insert_sorted(const struct& node);
+  //methods
+  void push_front(std::string first, std::string last, std::string num);
 
-  string lookup(const string& name); 
+  void push_back(std::string first, std::string last, std::string num);
 
-  string reverse_lookup(const string& phonenumber);
+  void read_from_file(const std::string& filename);
+
+  void write_to_file(const std::string& filename);
+  
+  void insert_sorted(const entry& node);
+
+  std::string lookup(const std::string& name); 
+
+  std::string reverse_lookup(const std::string& phonenumber);
 
   void print();
 
-  void delete_user(const string& username);
-}
+  void delete_user(const std::string& username);
   
 
 };

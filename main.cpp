@@ -44,4 +44,16 @@ int main() {
     cout << "Please enter your choice now: " << endl;
 
 
+    phonebook test;
+
+    test.push_back("James", "Smith", "731-819-5919");
+    test.push_back("John", "Cedar", "748-333-9138");
+    test.push_back("John", "Cedar", "748-333-9138");
+    test.push_back("John", "Cedar", "748-333-9138");
+    test.push_back("John", "Cedar", "748-333-9138");
+    test.push_back("John", "Cedar", "748-333-9138"); 
+    //    test.push_front("Sarah", "Miller", "323-333-9849");
+
+    test.write_to_file("testfile.txt");
+    test.read_from_file("testfile.txt"); 
   }
