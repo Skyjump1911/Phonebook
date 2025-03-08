@@ -22,6 +22,21 @@ phonebook::phonebook() {
 
 };
 
+
+phonebook::~phonebook() {
+
+  entry *next;
+  while(head != NULL) {
+
+    next = head->next;
+    delete head;
+    head = next; 
+
+  }
+
+
+
+}
 void phonebook::push_front(string first, string last, string num) {
 
   entry *temp = new entry;

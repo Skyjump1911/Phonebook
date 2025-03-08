@@ -27,14 +27,14 @@ int main() {
   displayMenu();
  
   
-  // populating the linked list so that we can test the write to file function. 
+  // populating the linked list so that we can test the write to file function.// By opening the testfile.txt, you will see that the date is indeed being written.  
   test.push_back("James", "Smith", "731-819-5919");
     test.push_back("John", "Cedar", "748-333-9138");
     test.push_back("John", "Cedar", "748-333-9138");
     test.push_back("John", "Cedar", "748-333-9138");
     test.push_back("John", "Cedar", "748-333-9138");
     test.push_back("John", "Cedar", "748-333-9138"); 
-
+    test.write_to_file("testfile.txt"); 
  
 
   
