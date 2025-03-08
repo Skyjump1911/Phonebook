@@ -1,3 +1,12 @@
+/**
+ * @file phonebook.cpp
+ * @author Noah Melton
+ * @date 2025-03-07
+ * @brief This is the file where we implement the phonebook class's functions
+ * 
+ * I got some of the functions to work, however, some of them I just couldn't figure out. 
+ */
+
 #include "phonebook.h"
 
 #include <string>
