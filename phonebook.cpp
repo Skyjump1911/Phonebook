@@ -157,7 +157,7 @@ void phonebook::delete_user(const std::string& first, const std::string& last){
     cout << "no users to delete";
     return; 
   }
-  if(temp != NULL && (temp->first_name == first && temp->last_name == last)) {
+  if(temp != NULL && temp->first_name == first && temp->last_name == last) {
 
     head = temp->next;
     delete temp;
@@ -173,7 +173,7 @@ void phonebook::delete_user(const std::string& first, const std::string& last){
     
   prev->next = temp->next;
   delete temp;
-
+  cout << "user deleted"; 
 
   
 }

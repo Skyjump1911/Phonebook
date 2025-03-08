@@ -22,62 +22,79 @@ void displayMenu();
 
 int main() {
   
-  phonebook test;
+  phonebook test; 
 
-
+  displayMenu();
+ 
+  
+  // populating the linked list so that we can test the write to file function. 
   test.push_back("James", "Smith", "731-819-5919");
     test.push_back("John", "Cedar", "748-333-9138");
     test.push_back("John", "Cedar", "748-333-9138");
     test.push_back("John", "Cedar", "748-333-9138");
     test.push_back("John", "Cedar", "748-333-9138");
     test.push_back("John", "Cedar", "748-333-9138"); 
-    //    test.push_front("Sarah", "Miller", "323-333-9849");
 
-    test.write_to_file("testfile.txt");
-    test.read_from_file("testfile.txt");
-    cout << "this is a test of the lookup funciton:" << endl;
-    test.push_back("Angela", "Melton", "731-819-6052"); 
-    cout << "Smith's Phone number is: "; 
-    test.lookup("James", "Smith");
-    cout << endl;
-    cout << endl;
-    cout << "Mom's number is: "; 
-    test.lookup("Angela", "Melton");
-    cout << endl;
-
-    cout << "Another test" << endl;
-
-
-    test.reverse_lookup("731-819-6052");
-    cout << endl;
-    test.reverse_lookup("188-1864-352");
-    cout << endl;
-    test.reverse_lookup("731-819-5919"); 
-    test.delete_user("James", "Smith");
-    test.reverse_lookup("731-819-5919");
+ 
 
   
-  int choice;
-       displayMenu(); 
+    int x;
+    string fileName;
+    string otherfileName;
+    string fir;
+    string las;
+    string individualNum;
+    string UsFirst;
+    string UsLast;
+    string UsPhone;
+    cin >> x;
 
-       cin >> choice;
 
-       switch(choice) {
+   
+    switch(x){
 
-       case 1:
-	 string filename;
-	 cout << "Enter the name of the file: ";
-	 cin >> filename; 
-	 test.read_from_file(filename);
-	 break; 
-       case 2:
-	 string secondname;
-	 cout << "Enter the name of the file: ";
-	 cin >> secondname;
-	 test.write_to_file(filename); 
-         break; 
-       }
-       
+    case 1: cout << "Enter your filename:"<< endl;
+      cin >> fileName; 
+      test.read_from_file(fileName);
+      
+      break;
+    case 2: cout << "Enter the name of the file you wish to write to:" << endl;
+      cin >> otherfileName;
+      test.write_to_file(otherfileName); 
+      break;
+    case 3: cout << "I haven't finished the print function yet..." << endl;
+      break;
+    case 4: cout << "Enter the user's first name:" << endl;
+      cin >> fir;
+      cout << "Enter the user's last name:" << endl;
+	cin >> las; 
+	test.lookup(fir,las);
+	break;
+    
+    case 5: cout << "Enter the phone number of the individual:";
+      cin >> individualNum;
+      test.reverse_lookup(individualNum);
+      break;
+    case 6: cout << "What is the first name of the user?";
+      cin >> UsFirst;
+      cout << "What is the last name if the user?";
+      cin >> UsLast;
+      cout << "What is the phone number of the user?";
+      cin >> UsPhone;
+      test.push_back(UsFirst,UsLast,UsPhone); 
+
+      break;
+    case 7: cout << "I couldn't get this one to work.";
+      break;
+    case 8: break; 
+
+
+
+
+      
+    }
+
+
   return 0;
 }
 
@@ -96,6 +113,8 @@ int main() {
 
     cout << "Please enter your choice now: " << endl;
 
+
+    
 
 
    
