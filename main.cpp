@@ -16,7 +16,9 @@
 using namespace std;
 
 
-
+/**
+So, it took me forever to be able to figure out how to do the displayMenu right. I tried making it void with no args, but that of course did not work. So, I asked chatgpt how I could have a void function that would be able to recurse if the object the function was operating on was out of scope. That is where chatgpt gave me the obvious idea to just pass the object by reference. 
+ **/
 
 void displayMenu(phonebook& phonebook);
 
@@ -25,9 +27,7 @@ int main() {
   phonebook test; 
 
   displayMenu(test);
- 
-  
-  // populating the linked list so that we can test the write to file function.// By opening the testfile.txt, you will see that the date is indeed being written.     
+
 
 
   return 0;
@@ -73,28 +73,35 @@ int main() {
     case 1: cout << "Enter your filename:"<< endl;
       cin >> fileName; 
       phonebook.read_from_file(fileName);
+      cout << endl;
       displayMenu(phonebook);       
       break;
     case 2: cout << "Enter the name of the file you wish to write to:" << endl;
       cin >> otherfileName;
       phonebook.write_to_file(otherfileName);
+      cout << endl;
       displayMenu(phonebook);
       break;
     case 3:
-      phonebook.print(); 
+      phonebook.print();
+      cout << endl;
       displayMenu(phonebook);
       break;
     case 4: cout << "Enter the user's first name:" << endl;
       cin >> fir;
       cout << "Enter the user's last name:" << endl;
 	cin >> las; 
-	phonebook.lookup(fir,las);
+
+        phonebook.lookup(fir,las);
+	cout << endl;
         displayMenu(phonebook);
+	
 	break;
     
     case 5: cout << "Enter the phone number of the individual:";
       cin >> individualNum;
       phonebook.reverse_lookup(individualNum);
+      cout << endl;
       displayMenu(phonebook);
       break;
     case 6: cout << "What is the first name of the user?";
@@ -103,7 +110,9 @@ int main() {
       cin >> UsLast;
       cout << "What is the phone number of the user?";
       cin >> UsPhone;
+
       phonebook.push_back(UsFirst,UsLast,UsPhone); 
+      cout << endl;
       displayMenu(phonebook);
       break;
     case 7: cout << "Enter the user's first name: ";
@@ -111,9 +120,6 @@ int main() {
       cout << "Enter the user's last name:";
       cin >> usLast;
       phonebook.delete_user(usFirst, usLast); 
-
-
-
 
       displayMenu(phonebook);
       break;

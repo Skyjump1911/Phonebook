@@ -3,7 +3,7 @@
  * @author Noah Melton
  * @date 2025-03-05
  * @brief This is the header file for the linked list phonebook assignment. 
- * 
+ * EXTRA NOTE: In this assignmnet, I got help from Justin Finn in the STEM lab.I also got a very limited amount of help from chatgpt. Those cases were both very limited, and constituted high level questions.  
  * 
  */
 
@@ -117,7 +117,7 @@ class phonebook {
  * @post The node is placed according to alphabetic order. 
  * 
  */
-  void insert_sorted(const entry& node);
+  void insert_sorted(string filename);
 
 
 /**

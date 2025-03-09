@@ -76,7 +76,7 @@ void phonebook::push_back(string first, string last, string num) {
    }
 
 }
-
+//Justin helped a lot with this one
 
 void phonebook::write_to_file(const string& filename){
 
@@ -108,6 +108,8 @@ void phonebook::write_to_file(const string& filename){
 
 
 }
+
+//Justin helped me with this one 
 void phonebook::read_from_file(const string& filename) {
 
   ifstream file;
@@ -227,3 +229,5 @@ void phonebook::print() {
 
 
 }
+
+
