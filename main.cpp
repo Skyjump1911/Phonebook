@@ -18,27 +18,44 @@ using namespace std;
 
 
 
-void displayMenu();
+void displayMenu(phonebook& phonebook);
 
 int main() {
   
   phonebook test; 
 
-  displayMenu();
+  displayMenu(test);
  
   
-  // populating the linked list so that we can test the write to file function.// By opening the testfile.txt, you will see that the date is indeed being written.  
-  test.push_back("James", "Smith", "731-819-5919");
-    test.push_back("John", "Cedar", "748-333-9138");
-    test.push_back("John", "Cedar", "748-333-9138");
-    test.push_back("John", "Cedar", "748-333-9138");
-    test.push_back("John", "Cedar", "748-333-9138");
-    test.push_back("John", "Cedar", "748-333-9138"); 
-    test.write_to_file("testfile.txt"); 
- 
+  // populating the linked list so that we can test the write to file function.// By opening the testfile.txt, you will see that the date is indeed being written.     
+
+
+  return 0;
+}
+
+
+  void displayMenu(phonebook& phonebook) {
+
+
+   
+
+
+    cout << "Welcome to the UTM Phonebook! You may select one of the following options:" << endl;
+    cout << "1 Read a phonebook from a file" << endl;
+    cout << "2 Write the phonebook to a file" << endl;
+    cout << "3 Print the phonebook " << endl;
+    cout << "4 Search for a user's phone number" << endl;
+    cout << "5 Reverse lookup by phone number" << endl;
+    cout << "6 Add a user" << endl;
+    cout << "7 Delete a user " << endl;
+    cout << "8 Exit this program" << endl;
+
+    cout << "Please enter your choice now: " << endl;
 
   
     int x;
+    string usFirst;
+    string usLast;
     string fileName;
     string otherfileName;
     string fir;
@@ -55,25 +72,30 @@ int main() {
 
     case 1: cout << "Enter your filename:"<< endl;
       cin >> fileName; 
-      test.read_from_file(fileName);
-      
+      phonebook.read_from_file(fileName);
+      displayMenu(phonebook);       
       break;
     case 2: cout << "Enter the name of the file you wish to write to:" << endl;
       cin >> otherfileName;
-      test.write_to_file(otherfileName); 
+      phonebook.write_to_file(otherfileName);
+      displayMenu(phonebook);
       break;
-    case 3: cout << "I haven't finished the print function yet..." << endl;
+    case 3:
+      phonebook.print(); 
+      displayMenu(phonebook);
       break;
     case 4: cout << "Enter the user's first name:" << endl;
       cin >> fir;
       cout << "Enter the user's last name:" << endl;
 	cin >> las; 
-	test.lookup(fir,las);
+	phonebook.lookup(fir,las);
+        displayMenu(phonebook);
 	break;
     
     case 5: cout << "Enter the phone number of the individual:";
       cin >> individualNum;
-      test.reverse_lookup(individualNum);
+      phonebook.reverse_lookup(individualNum);
+      displayMenu(phonebook);
       break;
     case 6: cout << "What is the first name of the user?";
       cin >> UsFirst;
@@ -81,40 +103,22 @@ int main() {
       cin >> UsLast;
       cout << "What is the phone number of the user?";
       cin >> UsPhone;
-      test.push_back(UsFirst,UsLast,UsPhone); 
-
+      phonebook.push_back(UsFirst,UsLast,UsPhone); 
+      displayMenu(phonebook);
       break;
-    case 7: cout << "I couldn't get this one to work.";
+    case 7: cout << "Enter the user's first name: ";
+      cin >> usFirst;
+      cout << "Enter the user's last name:";
+      cin >> usLast;
+      phonebook.delete_user(usFirst, usLast); 
+
+
+
+
+      displayMenu(phonebook);
       break;
     case 8: break; 
-
-
-
-
-      
     }
-
-
-  return 0;
-}
-
-
-  void displayMenu() {
-
-    cout << "Welcome to the UTM Phonebook! You may select one of the following options:" << endl;
-    cout << "1 Read a phonebook from a file" << endl;
-    cout << "2 Write the phonebook to a file" << endl;
-    cout << "3 Print the phonebook " << endl;
-    cout << "4 Search for a user's phone number" << endl;
-    cout << "5 Reverse lookup by phone number" << endl;
-    cout << "6 Add a user" << endl;
-    cout << "7 Delete a user " << endl;
-    cout << "8 Exit this program" << endl;
-
-    cout << "Please enter your choice now: " << endl;
-
-
-    
 
 
    

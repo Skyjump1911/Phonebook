@@ -154,7 +154,7 @@ class phonebook {
  * @post The linked list is printed out. 
  * 
  */
-  void print(const std::string& filename);
+  void print();
 
 
 /**

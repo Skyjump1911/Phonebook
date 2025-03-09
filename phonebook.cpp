@@ -184,8 +184,7 @@ void phonebook::delete_user(const std::string& first, const std::string& last){
   if(temp != NULL && temp->first_name == first && temp->last_name == last) {
 
     head = temp->next;
-    delete temp;
-    cout << "at least this part works"; 
+    delete temp; 
     return;
   }
   
@@ -203,4 +202,28 @@ void phonebook::delete_user(const std::string& first, const std::string& last){
 }
 
 
+void phonebook::print() {
+
+
+  entry *temp = head; 
   
+ if(temp == NULL) {
+    cout << "Printing complete.";
+    return; 
+  }
+  while(temp != NULL) {
+
+    cout << endl;
+    cout << temp->first_name;
+    cout << " ";
+    cout << temp->last_name;
+    cout << endl;
+    cout << temp->phone_number;
+    
+    temp = temp->next; 
+
+}
+   
+
+
+}
