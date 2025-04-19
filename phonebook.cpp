@@ -105,7 +105,7 @@ void phonebook::write_to_file(const string& filename){
   file << transfer->last_name << endl;
   file << transfer->phone_number << endl;
 
-
+  file.close(); 
 
 }
 
@@ -125,7 +125,8 @@ void phonebook::read_from_file(const string& filename) {
     push_back(first, last, phonenum);
     file >> first >> last >> phonenum; 
 }
-    
+
+  file.close(); 
 }
 
 void phonebook::lookup(const std::string& firstname, const std::string& lastname) {

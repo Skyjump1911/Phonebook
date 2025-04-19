@@ -48,10 +48,26 @@ class phonebook {
   public: 
 
 
-  //constructor
-  phonebook();
+ 
 
-  //destructor
+/**
+ * the default constructor
+ *
+ * @pre N/A
+ * @post this constructor creates an instance of a phonebook class
+ * 
+ */
+  Phonebook();
+
+ 
+
+/**
+ * This is the destructor for the phonebook class
+ *
+ * @pre N/A
+ * @post the phonebook is destroyed and the memory is cleaned up
+ * 
+ */
     ~phonebook();
   
   //methods
